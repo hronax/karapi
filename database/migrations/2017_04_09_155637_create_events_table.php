@@ -17,9 +17,10 @@ class CreateEventsTable extends Migration
             $table->string('title');
             $table->integer('type');
             $table->text('text');
+            $table->text('image_path');
             $table->integer('category_id');
             $table->integer('department_id');
-            $table->boolean('top');
+            $table->boolean('is_top');
 
             $table->timestamps();
         });
