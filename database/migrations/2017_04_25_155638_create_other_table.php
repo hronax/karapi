@@ -109,7 +109,7 @@ class CreateOtherTable extends Migration
             $table->timestamps();
         });
 
-        Schema::create('group_subject', function (Blueprint $table) {
+        Schema::create('exams', function (Blueprint $table) {
             $table->integer('group_id');
             $table->integer('subject_id');
             $table->integer('type');
