@@ -78,10 +78,10 @@ class CreateOtherTable extends Migration
 
         Schema::create('schedules', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('building_id');
+            $table->integer('auditory_id');
             $table->integer('group_id');
             $table->integer('subject_id');
-            $table->integer('class_number');
+            $table->integer('pair_id');
             $table->integer('teacher_id');
             $table->integer('week_day');
             $table->integer('position');
@@ -91,10 +91,10 @@ class CreateOtherTable extends Migration
 
         Schema::create('changes', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('building_id');
+            $table->integer('auditory_id');
             $table->integer('group_id');
             $table->integer('subject_id');
-            $table->integer('class_number');
+            $table->integer('pair_id');
             $table->integer('teacher_id');
             $table->date('date');
 
