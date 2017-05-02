@@ -69,7 +69,7 @@ class CreateOtherTable extends Migration
         Schema::create('pairs', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('building_id');
-            $table->integer('class_number');
+            $table->integer('pair_number');
             $table->string('time_start');
             $table->string('time_end');
 

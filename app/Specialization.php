@@ -15,6 +15,10 @@ class Specialization extends Model
         'name', 'code'
     ];
 
+    protected $attributes = array(
+        'code' => '0'
+    );
+
     /**
      * Get department of the specialization.
      */
@@ -26,8 +30,8 @@ class Specialization extends Model
     /**
      * Get subjects list
      */
-    public function subjects()
-    {
-        return $this->belongsToMany('App\Subject', 'subject_specialization');
-    }
+//    public function subjects()
+//    {
+//        return $this->belongsToMany('App\Subject', 'subject_specialization');
+//    }
 }

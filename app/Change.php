@@ -12,7 +12,7 @@ class Change extends Model
      * @var array
      */
     protected $fillable = [
-        'class_number', 'date'
+        'pair_number', 'date'
     ];
 
     /**

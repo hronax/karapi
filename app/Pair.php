@@ -12,7 +12,7 @@ class Pair extends Model
      * @var array
      */
     protected $fillable = [
-        'class_number', 'time_start', 'time_end'
+        'pair_number', 'time_start', 'time_end'
     ];
 
     /**

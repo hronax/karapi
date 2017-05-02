@@ -18,10 +18,10 @@ class Subject extends Model
     /**
      * Get specialization list where this subject exists
      */
-    public function specializations()
-    {
-        return $this->belongsToMany('App\Specialization', 'subject_specialization');
-    }
+//    public function specializations()
+//    {
+//        return $this->belongsToMany('App\Specialization', 'subject_specialization');
+//    }
 
     /**
      * Get specialization list where this subject exists
