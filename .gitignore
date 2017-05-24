@@ -1,6 +1,12 @@
 /node_modules
 /public/hot
 /public/storage
+/public/images/news/*
+/public/images/gifts/*
+/public/images/courses/*
+/public/thumbnail/news/*
+/public/thumbnail/gifts/*
+/public/thumbnail/courses/*
 /storage/*.key
 /vendor
 /.idea

@@ -125,7 +125,7 @@ class CreateOtherTable extends Migration
 
             $table->string('name');
             $table->text('description');
-            $table->string('image_path');
+            $table->string('image_name');
             $table->date('start_date');
 
             $table->timestamps();
@@ -136,7 +136,7 @@ class CreateOtherTable extends Migration
 
             $table->string('name');
             $table->text('description');
-            $table->string('image_path');
+            $table->string('image_name');
             $table->integer('price');
 
             $table->timestamps();
