@@ -28,6 +28,14 @@ class Specialization extends Model
     }
 
     /**
+     * Get department of the specialization.
+     */
+    public function groups()
+    {
+        return $this->hasMany('App\Group');
+    }
+
+    /**
      * Get subjects list
      */
 //    public function subjects()

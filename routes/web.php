@@ -17,3 +17,9 @@ Route::get('/', function () {
 
 Route::get('resizeImage', 'ImageController@resizeImage');
 Route::post('resizeImagePost',['as'=>'resizeImagePost','uses'=>'ImageController@resizeImagePost']);
+
+Route::get('news', 'NewsController@index');
+Route::get('gifts', 'GiftsController@index');
+Route::get('courses', 'CoursesController@index');
+Route::get('groups', 'GroupsController@index');
+Route::get('exams/{group_id}', 'ExamsController@index');

@@ -32,7 +32,7 @@ class MakeGiftsSeeder extends Seeder
 
             $img->save($destinationPath.'/'.$new_image_name);
 
-            $destinationPath = public_path('thumbnail/gifts');
+            $destinationPath = public_path('thumbnails/gifts');
             $img->resize(150, 100, function ($constraint) {
                 $constraint->aspectRatio();
             })->save($destinationPath.'/'.$new_image_name);

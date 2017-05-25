@@ -4,9 +4,9 @@
 /public/images/news/*
 /public/images/gifts/*
 /public/images/courses/*
-/public/thumbnail/news/*
-/public/thumbnail/gifts/*
-/public/thumbnail/courses/*
+/public/thumbnails/news/*
+/public/thumbnails/gifts/*
+/public/thumbnails/courses/*
 /storage/*.key
 /vendor
 /.idea

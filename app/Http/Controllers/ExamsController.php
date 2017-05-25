@@ -7,32 +7,32 @@ use App\Http\Requests;
 use Image;
 use App\News;
 
-class CoursesController extends Controller
+class ExamsController extends Controller
 {
 
     /**
      * Show the specified photo comment.
+     * @param $group_id
      *
      * @return Response
      */
-    public function index()
+    public function index($group_id)
     {
-        $courses = \App\Course::paginate(10);
-        $courses_array = [];
-        foreach ($courses as $n) {
-            $courses_array[] = [
-                'id' => $n->id,
-                'name' => $n->name,
-                'description' => $n->description,
-                'start_date' => $n->start_date,
-                'created_at' => $n->created_at,
-                'image_path' => '/images/news/'.$n->image_name,
-                'image_thumb' => '/thumbnails/news/'.$n->image_name
+        $exams = \App\Exam::where('group_id', $group_id);
+        $exams_array = [];
+        foreach ($exams->cursor() as $exam) {
+            $exams_array[] = [
+                'subject' => $exam->subject->name,
+                'type' => ($exam->type == 1 ? 'exam' : 'zalik'),
+                'building' => $exam->auditory->building->name,
+                'auditory' => $exam->auditory->code,
+                'teacher' => $exam->teacher->fio,
+                'pass_date' => $exam->pass_date
             ];
         }
 
         return response()->json(
-            $courses_array
+            $exams_array
         );
     }
 

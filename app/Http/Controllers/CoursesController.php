@@ -7,7 +7,7 @@ use App\Http\Requests;
 use Image;
 use App\News;
 
-class GiftsController extends Controller
+class CoursesController extends Controller
 {
 
     /**
@@ -17,14 +17,14 @@ class GiftsController extends Controller
      */
     public function index()
     {
-        $gifts = \App\Gift::all();
-        $gifts_array = [];
-        foreach ($gifts as $n) {
-            $gifts_array[] = [
+        $courses = \App\Course::paginate(10);
+        $courses_array = [];
+        foreach ($courses as $n) {
+            $courses_array[] = [
                 'id' => $n->id,
                 'name' => $n->name,
                 'description' => $n->description,
-                'price' => $n->price,
+                'start_date' => $n->start_date,
                 'created_at' => $n->created_at,
                 'image_path' => '/images/news/'.$n->image_name,
                 'image_thumb' => '/thumbnails/news/'.$n->image_name
@@ -32,7 +32,7 @@ class GiftsController extends Controller
         }
 
         return response()->json(
-            $gifts_array
+            $courses_array
         );
     }
 

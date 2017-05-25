@@ -5,49 +5,39 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Image;
+use App\News;
 
-class ImageController extends Controller
+class NewsController extends Controller
 {
 
     /**
-     * Show the form for creating a new resource.
+     * Show the specified photo comment.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
-    public function resizeImage()
+    public function index()
     {
-        return view('resizeImage');
-    }
+        $news = \App\News::paginate(10);
+        $news_array = [];
+        foreach ($news as $n) {
+            $news_array[] = [
+                'id' => $n->id,
+                'title' => $n->title,
+                'text' => $n->text,
+                'category' => $n->category->name,
+                'tags' => $n->tagNames(),
+                'department' => $n->department,
+                'created_at' => $n->created_at,
+                'period' => $n->period,
+                'type' => ($n->type == 1 ? 'announce' : 'news'),
+                'image_path' => '/images/news/'.$n->image_name,
+                'image_thumb' => '/thumbnails/news/'.$n->image_name
+            ];
+        }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function resizeImagePost(Request $request)
-    {
-        $this->validate($request, [
-            'title' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
-
-        $image = $request->file('image');
-        $input['imagename'] = time().'.'.$image->getClientOriginalExtension();
-
-
-        $destinationPath = public_path('thumbnail');
-        $img = Image::make($image->getRealPath());
-        $img->resize(200, 100, function ($constraint) {
-            $constraint->aspectRatio();
-        })->save($destinationPath.'/'.$input['imagename']);
-
-        $destinationPath = public_path('images');
-        $image->move($destinationPath, $input['imagename']);
-//        $this->postImage->add($input);
-
-        return back()
-            ->with('success','Image Upload successful')
-            ->with('imageName',$input['imagename']);
+        return response()->json(
+            $news_array
+        );
     }
 
 }

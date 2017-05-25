@@ -7,7 +7,7 @@ use App\Http\Requests;
 use Image;
 use App\News;
 
-class CoursesController extends Controller
+class GroupsController extends Controller
 {
 
     /**
@@ -17,22 +17,43 @@ class CoursesController extends Controller
      */
     public function index()
     {
-        $courses = \App\Course::paginate(10);
-        $courses_array = [];
-        foreach ($courses as $n) {
-            $courses_array[] = [
-                'id' => $n->id,
-                'name' => $n->name,
-                'description' => $n->description,
-                'start_date' => $n->start_date,
-                'created_at' => $n->created_at,
-                'image_path' => '/images/news/'.$n->image_name,
-                'image_thumb' => '/thumbnails/news/'.$n->image_name
+        $departments = \App\Department::all();
+        $departments_array = [];
+
+        foreach ($departments as $dep) {
+            $department = [
+                'id' => $dep->id,
+                'name' => $dep->name,
+                'specializations' => []
             ];
+            $specializations_array = [];
+            if ($dep->specializations->count() > 0) {
+                foreach ($dep->specializations as $spec) {
+                    $specialization = [
+                        'id' => $spec->id,
+                        'name' => $spec->name,
+                        'groups' => []
+                    ];
+                    $groups_array = [];
+                    if ($spec->groups->count() > 0) {
+                        foreach ($spec->groups as $group) {
+                            $groups_array[] = [
+                                'id' => $group->id,
+                                'code' => $group->code,
+                                'course_number' => $group->course_number
+                            ];
+                        }
+                        $specialization['groups'] = $groups_array;
+                        $specializations_array[] = $specialization;
+                    }
+                }
+                $department['specializations'] = $specializations_array;
+            }
+            $departments_array[] = $department;
         }
 
         return response()->json(
-            $courses_array
+            $departments_array
         );
     }
 

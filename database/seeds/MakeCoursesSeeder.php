@@ -32,7 +32,7 @@ class MakeCoursesSeeder extends Seeder
 
             $img->save($destinationPath.'/'.$new_image_name);
 
-            $destinationPath = public_path('thumbnail/courses');
+            $destinationPath = public_path('thumbnails/courses');
             $img->resize(150, 100, function ($constraint) {
                 $constraint->aspectRatio();
             })->save($destinationPath.'/'.$new_image_name);
