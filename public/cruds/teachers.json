@@ -1,0 +1,8 @@
+{
+    "fields": [
+        {
+            "name": "fio",
+            "type": "string"
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+.search-btn {
+  padding: 9px; }
+
+.glyphicon {
+  margin-right: 10px; }
+
+.sidebar .panel-body {
+  padding: 0px; }
+
+.sidebar .panel-body table tr td {
+  padding-left: 15px; }
+
+.sidebar .panel-body .table {
+  margin-bottom: 0px; }
+
+table.table-borderless thead th:last-child {
+  width: 125px; }
+
+.select2-selection {
+  height: 34px !important; }
+
+.select2-selection__rendered {
+  line-height: 34px !important; }
+
+/*# sourceMappingURL=common.css.map */

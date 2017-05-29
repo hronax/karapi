@@ -110,7 +110,7 @@ class MakeNewsSeeder extends Seeder
 
             $img->save($destinationPath.'/'.$new_image_name);
 
-            $destinationPath = public_path('thumbnail/news');
+            $destinationPath = public_path('thumbnails/news');
             $img->resize(150, 100, function ($constraint) {
                 $constraint->aspectRatio();
             })->save($destinationPath.'/'.$new_image_name);

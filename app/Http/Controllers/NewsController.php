@@ -12,12 +12,20 @@ class NewsController extends Controller
 
     /**
      * Show the specified photo comment.
+     * @param $type
      *
      * @return Response
      */
-    public function index()
+    public function index($type)
     {
-        $news = \App\News::paginate(10);
+        $news = [];
+        // top news
+        if ($type == 3) {
+            $news = \App\News::where('is_top', 1)->orderBy('created_at', 'desc')->paginate(5);
+        } elseif ($type == 1 || $type == 2) {
+            $news = \App\News::where('type', $type)->orderBy('created_at', 'desc')->paginate(5);
+        }
+
         $news_array = [];
         foreach ($news as $n) {
             $news_array[] = [

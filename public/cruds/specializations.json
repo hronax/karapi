@@ -1,0 +1,17 @@
+{
+    "fields": [
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "code",
+            "type": "string"
+        },
+        {
+            "name": "department_id",
+            "type": "select",
+            "options": []
+        }
+    ]
+}

@@ -18,7 +18,7 @@ class Category extends Model
     /**
      * Get the events for the category.
      */
-    public function events()
+    public function news()
     {
         return $this->hasMany('App\News');
     }

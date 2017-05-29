@@ -1,0 +1,34 @@
+{
+    "fields": [
+        {
+            "name": "code",
+            "type": "string"
+        },
+        {
+            "name": "building_id",
+            "type": "select",
+            "options": []
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "building_id",
+            "references": "id",
+            "on": "buildings",
+            "onDelete": "cascade"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "building",
+            "type": "belongsTo",
+            "class": "App\\Building"
+        }
+    ],
+    "validations": [
+        {
+            "field": "title",
+            "rules": "required"
+        }
+    ]
+}

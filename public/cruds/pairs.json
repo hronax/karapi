@@ -1,0 +1,21 @@
+{
+    "fields": [
+        {
+            "name": "pair_number",
+            "type": "integer"
+        },
+        {
+            "name": "time_start",
+            "type": "string"
+        },
+        {
+            "name": "time_end",
+            "type": "string"
+        },
+        {
+            "name": "building",
+            "type": "select",
+            "options": []
+        }
+    ]
+}

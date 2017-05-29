@@ -1,0 +1,62 @@
+{
+    "fields": [
+        {
+            "name": "title",
+            "type": "string"
+        },
+        {
+            "name": "text",
+            "type": "text"
+        },
+        {
+            "name": "period",
+            "type": "string"
+        },
+        {
+            "name": "type",
+            "type": "select",
+            "options": ["announce", "news"]
+        },
+        {
+            "name": "is_top",
+            "type": "select",
+            "options": ["regular news", "top news"]
+        },
+        {
+            "name": "image_name",
+            "type": "file"
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "category_id",
+            "references": "id",
+            "on": "categories",
+            "onDelete": "cascade"
+        },
+        {
+            "column": "department_id",
+            "references": "id",
+            "on": "departments",
+            "onDelete": "cascade"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "category",
+            "type": "belongsTo",
+            "class": "App\\Category"
+        },
+        {
+            "name": "department",
+            "type": "belongsTo",
+            "class": "App\\Department"
+        }
+    ],
+    "validations": [
+        {
+            "field": "title",
+            "rules": "required"
+        }
+    ]
+}

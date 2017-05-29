@@ -26,8 +26,8 @@ class GiftsController extends Controller
                 'description' => $n->description,
                 'price' => $n->price,
                 'created_at' => $n->created_at,
-                'image_path' => '/images/news/'.$n->image_name,
-                'image_thumb' => '/thumbnails/news/'.$n->image_name
+                'image_path' => '/images/gifts/'.$n->image_name,
+                'image_thumb' => '/thumbnails/gifts/'.$n->image_name
             ];
         }
 

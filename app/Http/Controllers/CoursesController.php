@@ -26,8 +26,8 @@ class CoursesController extends Controller
                 'description' => $n->description,
                 'start_date' => $n->start_date,
                 'created_at' => $n->created_at,
-                'image_path' => '/images/news/'.$n->image_name,
-                'image_thumb' => '/thumbnails/news/'.$n->image_name
+                'image_path' => '/images/courses/'.$n->image_name,
+                'image_thumb' => '/thumbnails/courses/'.$n->image_name
             ];
         }
 

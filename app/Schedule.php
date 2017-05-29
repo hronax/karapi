@@ -20,7 +20,7 @@ class Schedule extends Model
      */
     public function auditory()
     {
-        return $this->hasOne('App\Auditory');
+        return $this->belongsTo('App\Auditory');
     }
 
     /**
@@ -28,7 +28,7 @@ class Schedule extends Model
      */
     public function group()
     {
-        return $this->hasOne('App\Group');
+        return $this->belongsTo('App\Group');
     }
 
     /**
@@ -36,7 +36,7 @@ class Schedule extends Model
      */
     public function subject()
     {
-        return $this->hasOne('App\Subject');
+        return $this->belongsTo('App\Subject');
     }
 
     /**
@@ -44,7 +44,7 @@ class Schedule extends Model
      */
     public function teacher()
     {
-        return $this->hasOne('App\Teacher');
+        return $this->belongsTo('App\Teacher');
     }
 
     /**
@@ -52,6 +52,6 @@ class Schedule extends Model
      */
     public function pair()
     {
-        return $this->hasOne('App\Pair');
+        return $this->belongsTo('App\Pair');
     }
 }

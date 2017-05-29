@@ -1,0 +1,17 @@
+{
+    "fields": [
+        {
+            "name": "code",
+            "type": "string"
+        },
+        {
+            "name": "course_number",
+            "type": "integer"
+        },
+        {
+            "name": "specialization_id",
+            "type": "select",
+            "options": []
+        }
+    ]
+}
