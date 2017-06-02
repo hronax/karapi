@@ -1,0 +1,39 @@
+{
+    "fields": [
+        {
+            "name": "group_id",
+            "type": "select",
+            "options": []
+        },
+        {
+            "name": "subject_id",
+            "type": "select",
+            "options": []
+        },
+        {
+            "name": "pair_id",
+            "type": "select",
+            "options": []
+        },
+        {
+            "name": "auditory_id",
+            "type": "select",
+            "options": []
+        },
+        {
+            "name": "teacher_id",
+            "type": "select",
+            "options": []
+        },
+        {
+            "name": "week_day",
+            "type": "select",
+            "options": []
+        },
+        {
+            "name": "position",
+            "type": "select",
+            "options": []
+        }
+    ]
+}

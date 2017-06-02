@@ -30,3 +30,15 @@ if (!function_exists('specializationsWithDepartmentsList')) {
         return $values;
     }
 }
+
+if (!function_exists('auditoriesWithBuildingsList')) {
+    function auditoriesWithBuildingsList()
+    {
+        $auditory = App\Auditory::all();
+        $values = [];
+        foreach($auditory as $audi) {
+            $values[$audi->id] = $audi->building->name.': '.$audi->code;
+        }
+        return $values;
+    }
+}

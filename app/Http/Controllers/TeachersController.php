@@ -17,10 +17,17 @@ class TeachersController extends Controller
      */
     public function index()
     {
-        $teachers = \App\Teacher::all()->pluck('id', 'fio');
+        $teachers = \App\Teacher::all();
+        $teachers_array = [];
+        foreach ($teachers as $teacher) {
+            $teachers_array[] = [
+                'id' => $teacher->id,
+                'name' => $teacher->fio
+            ];
+        }
 
         return response()->json(
-            $teachers
+            $teachers_array
         );
     }
 

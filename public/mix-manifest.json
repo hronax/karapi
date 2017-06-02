@@ -5,5 +5,6 @@
   "/js/chosen.jquery.js": "/js/chosen.jquery.js",
   "/css/chosen.css": "/css/chosen.css",
   "/js/select2.min.js": "/js/select2.min.js",
-  "/css/select2.css": "/css/select2.css"
+  "/css/select2.css": "/css/select2.css",
+  "/js/common.js": "/js/common.js"
 }

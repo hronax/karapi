@@ -23,8 +23,3 @@
         {!! Form::submit(isset($submitButtonText) ? $submitButtonText : trans('admin.actions.create'), ['class' => 'btn btn-primary']) !!}
     </div>
 </div>
-<script>
-    $(function() {
-        $('.select2').select2();
-    });
-</script>

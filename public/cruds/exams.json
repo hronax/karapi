@@ -1,0 +1,34 @@
+{
+    "fields": [
+        {
+            "name": "group_id",
+            "type": "select",
+            "options": []
+        },
+        {
+            "name": "subject_id",
+            "type": "select",
+            "options": []
+        },
+        {
+            "name": "type",
+            "type": "select",
+            "options": []
+        },
+        {
+            "name": "auditory_id",
+            "type": "select",
+            "options": []
+        },
+        {
+            "name": "teacher_id",
+            "type": "select",
+            "options": []
+        },
+        {
+            "name": "pass_date",
+            "type": "select",
+            "options": []
+        }
+    ]
+}

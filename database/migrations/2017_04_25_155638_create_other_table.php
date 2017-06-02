@@ -110,12 +110,14 @@ class CreateOtherTable extends Migration
         });
 
         Schema::create('exams', function (Blueprint $table) {
+            $table->increments('id');
+
             $table->integer('group_id');
             $table->integer('subject_id');
             $table->integer('type');
             $table->integer('auditory_id');
             $table->integer('teacher_id');
-            $table->date('pass_date');
+            $table->dateTime('pass_date');
 
             $table->timestamps();
         });

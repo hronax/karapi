@@ -65,7 +65,7 @@
                     <table class="table">
                         <tr>
                             <td {!! classActivePath('admin/schedule') !!}>
-                            <a href="{{ url('/admin/schedule') }}">
+                            <a href="{{ url('/admin/schedules') }}">
                                 {{ trans('admin.main_menu.schedule') }}
                             </a>
                             </td>

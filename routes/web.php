@@ -41,3 +41,6 @@ Route::resource('admin/gifts', 'Admin\\GiftsController');
 Route::resource('admin/courses', 'Admin\\CoursesController');
 Route::resource('admin/pairs', 'Admin\\PairsController');
 Route::resource('admin/groups', 'Admin\\GroupsController');
+Route::resource('admin/exams', 'Admin\\ExamsController');
+Route::resource('admin/changes', 'Admin\\ChangesController');
+Route::resource('admin/schedules', 'Admin\\SchedulesController');

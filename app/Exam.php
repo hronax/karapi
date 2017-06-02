@@ -13,7 +13,11 @@ class Exam extends Model
      */
     protected $fillable = [
         'type',
-        'date'
+        'pass_date',
+        'group_id',
+        'auditory_id',
+        'teacher_id',
+        'subject_id'
     ];
 
     /**

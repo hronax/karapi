@@ -12,7 +12,12 @@ class Change extends Model
      * @var array
      */
     protected $fillable = [
-        'pair_number', 'date'
+        'pair_id',
+        'date',
+        'group_id',
+        'auditory_id',
+        'teacher_id',
+        'subject_id'
     ];
 
     /**
